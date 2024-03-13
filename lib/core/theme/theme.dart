@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_todo/core/theme/colors.dart';
+
+import './colors.dart';
 
 final darkTheme = ThemeData(
   brightness: Brightness.dark,
   primaryColor: kPrimaryColor,
+  fontFamily: 'Lato',
   appBarTheme: const AppBarTheme(
     backgroundColor: Colors.transparent,
     centerTitle: true,
   ),
-  fontFamily: 'Lato',
 );
