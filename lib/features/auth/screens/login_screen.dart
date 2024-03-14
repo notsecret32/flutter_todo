@@ -98,7 +98,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const Align(
                   child: AuthClickableText(
-                    text: 'Don’t have an account? ',
+                    text: 'Don’t have an account?',
                     clickableText: 'Register',
                   ),
                 )

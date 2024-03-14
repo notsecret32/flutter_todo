@@ -8,29 +8,38 @@ class AuthClickableText extends StatelessWidget {
     super.key,
     required this.text,
     required this.clickableText,
+    this.onTap,
   });
 
   final String text;
   final String clickableText;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    return RichText(
-      text: TextSpan(
-        text: text,
-        style: textTheme.secondaryText.copyWith(
-          color: kInactiveBorderColor,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          text,
+          style: textTheme.secondaryText.copyWith(
+            color: kInactiveBorderColor,
+          ),
         ),
-        children: <TextSpan>[
-          TextSpan(
-            text: clickableText,
+        const SizedBox(
+          width: 4,
+        ),
+        GestureDetector(
+          onTap: onTap,
+          child: Text(
+            clickableText,
             style: textTheme.secondaryText.copyWith(
               color: Colors.white,
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
